@@ -1,13 +1,12 @@
 import 'dotenv/config';
 import express from 'express';
-//hello
 const app = express()
 const bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-let routes = require('./api/routes') //importing route
+let routes = require('./api/routes')
 routes(app)
 
 app.use(function(req, res) {
